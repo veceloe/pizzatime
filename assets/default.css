@@ -1,0 +1,108 @@
+body {margin: 0; padding: 0; font-family: Century Gothic;
+
+  font-family: 'Jost', serif;
+}
+header {width: 100%; background-color: white;}
+main {margin: 0 auto; width: 100%;}
+a {text-decoration: none;}
+img {text-align:center; padding: 10px; border-radius: 10px;}
+.clr {clear:both; margin:0; padding:0; width:100%; font-size:0; line-height:0;}
+
+.right {float: right;}
+
+.left {float: left;}
+
+.center {text-align:  center;}
+
+.button{background: white; border-radius: 10px; font-family: "Jost"; border-color: grey; font-size: 20px;}
+.button a:visited{color: gray;}
+
+.menu {margin: 0; padding: 20px 0; height: 30px; line-height: 30px; text-align: center;}
+.menu li {display: inline-block; width: 15%; vertical-align: top; font-size: 15px;}
+.menu li a {text-decoration: none; transition: all 0.15s ease; color: orangered;}
+.menu li a:hover {text-decoration: none; color: orange; font-size: 17px;}
+.menu li ul {position: absolute; z-index: 1; top: -1000px; margin: 0 0 0 5px; padding: 0; border-radius: 10px; width: 260px; border-color: #ff4500; background-color: rgba(255, 69, 0, 0.7);}
+.menu li ul li{display: block; padding: 10px 15px; font-size: 15px; text-align: left; width: 100%;}
+.menu li ul li a{color: white}
+.menu li ul li a:visited{color: white}
+.menu li:hover ul {top: 50px;}
+.menu li ul:hover {top: 50px;}
+
+footer {margin: 0 auto; width: 100%; padding: 20px 0 0 0; background: darkgrey; vertical-align: center;}
+footer ul {margin: 0; padding: 20px 0; height: 20px; line-height: 20px; text-align: center;}
+footer ul li {display: inline-block; width: 15%; vertical-align: center; font-size: 15px;}
+footer ul li a {text-decoration: none; transition: all 0.15s ease; color: white;}
+footer ul li a:hover {text-decoration: none; color: ghostwhite; font-size: 17px;}
+
+.mainer {margin: 20px 10%; text-align: justify;}
+IMG.gnp{float: right;}
+
+.title {margin: 0 300px 0 0; padding: 0 10px 0 0; font-weight: bold; text-align: center;}
+.title a {text-decoration: none; color: orangered; font-family: "Brush Script MT"; font-size: 30px;}
+.title a:visited {color: orangered;}
+
+.slider {position: relative; overflow: hidden;}
+.slider__wrapper {display: flex; transition: transform 0.6s ease;}
+.slider__item {flex: 0 0 100%; max-width: 100%;}
+.slider__item > div {height: 250px}
+.slider__item:first-child > div {height: 275px}
+.slider__control {position: absolute; top: 50%; display: none; align-items: center; justify-content: center; width: 40px; color: #fff; text-align: center; opacity: 0.5; height: 50px; transform: translateY(-50%); background: rgba(0, 0, 0, .5);}
+.slider__control_show {display: flex;}
+.slider__control:hover,
+.slider__control:focus {color: #fff; text-decoration: none; outline: 0; opacity: .9;}
+.slider__control_left {left: 0;}
+.slider__control_right {right: 0;}
+.slider__control::before {content: ''; display: inline-block; width: 20px; height: 20px; background: transparent no-repeat center center; background-size: 100% 100%;}
+.slider__control_left::before {background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E");}
+.slider__control_right::before {background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");}
+.slider__item>div {line-height: 250px; font-size: 50px; text-align: center;}
+
+.card-container { width: 100%; margin: 0 8%;}
+.card {display:inline-block;}
+.card p {width: 292px; text-align: justify; color: gray;}
+.card img {transition: all 0.15s ease; }
+.card img:hover {transform: scale(1.03); }
+a.bn{color: white; font-size: 14px; padding: 1px 3px; font-family: "Jost"; border-radius: 7px; border-color: orangered; background: orangered; cursor: pointer; width: 75px; transition: all 0.15s ease; }
+a.bn:hover {background: orange; border-color: orange;}
+
+.bn{color: white; font-size: 15px; padding: 1px 3px; font-family: "Jost"; border-radius: 7px; border-color: orangered; background: orangered; cursor: pointer; width: 150px; transition: all 0.15s ease; }
+.bn:hover {background: orange; border-color: orange;}
+
+.sasi {margin: 0 10px; height: 120px;}
+.sasi li {border-left: 2px black; display: inline-block; line-height: 120px; vertical-align: top; width: 19%; text-align: center;}
+.sasi li a {text-decoration: none; color: coral; cursor: pointer;}
+
+.aia{margin: 30px 25%;}
+
+form {position: relative; background: white;}
+input, button {border: none; outline: none; background: transparent; font-family: "Jost";}
+input {font-family: "Jost";}
+
+.btton {position: absolute; top: 0; right: 0; cursor: pointer;}
+.btton:before {content: "\f002"; font-family: FontAwesome; font-size: 16px; color: white;}
+
+.phone{border: 1px solid black; border-radius: 5px; width: 100px;}
+#app-main{margin: 20px 10%;}
+
+#pizza{text-align: left; margin: 10px auto; width: 1280px; color: orangered;}
+#snacks{text-align: left; margin: 10px auto; width: 1280px; color: orangered;}
+#deserts{text-align: left; margin: 10px auto; width: 1280px; color: orangered;}
+#drinks{text-align: left; margin: 10px auto; width: 1280px; color: orangered;}
+
+.vk  { font-size:40px; font-weight: bold; text-align: center; text-decoration: none; color: dodgerblue; font-family: "Jost"; cursor: pointer;}
+.inst{font-size:40px; font-weight: bold; text-align: center; text-decoration: none; color: rosybrown; font-family: "Jost"; cursor: pointer;}
+.fb  {font-size:40px; font-weight: bold; text-align: center; text-decoration: none; color: darkblue; font-family: "Jost"; cursor: pointer;}
+.ok  { font-size:40px; font-weight: bold; text-align: center; text-decoration: none; color: orangered; font-family: "Jost"; cursor: pointer;}
+.tt  { font-size:40px; font-weight: bold; text-align: center; text-decoration: none; color: deepskyblue; font-family: "Jost"; cursor: pointer;}
+
+#darkbg {background: rgba(102, 102, 102, 0.5); width: 100%; height: 100%; position: fixed; top: 0; left: 0;}
+#window {width: 570px; height: 230px; padding: 15px; border: white; border-radius: 30px; color: black; position: absolute; top: 0; right: 0; bottom: 0; left: 0; margin: auto; background: #fff;}
+.wcard{text-align: left; width: 300px; display:inline-block;}
+.wcard h2 {margin: 0;}
+.wcard p{color: darkgrey;}
+#cost{color:white; background: orangered; border-radius: 10px; margin: 10px auto 0 auto; padding: 2px 5px; position: relative; bottom:25px; text-decoration: none; background: orangered; cursor:pointer; transition: background 0.15s ease;}
+#cost:hover {background: orange;}
+.cardimg{text-align: right; width: 200px; height: 200px; transition: all 0.15s ease;}
+.cardimg:hover{transform: scale(1.03);}
+.close {display: inline-block; color: white; padding: 0px 10px; margin: 0 auto; text-align: right; border-radius: 100%; text-decoration: none; background: orangered; font-size: 15pt; cursor:pointer; transition: background 0.15s ease;position: relative; float: right;}
+.close:hover {background: orange;}

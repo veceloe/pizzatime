@@ -1,0 +1,14 @@
+server:
+  port: 9090
+spring:
+  freemarker.suffix: .ftl
+  mail.default-encoding: UTF-8
+spring.mail:
+  host: smtp.gmail.com
+  port: 587
+  username: pizzatimegel@gmail.com
+  password: TimeOfPizza1987
+  protocol: smtp
+  properties.mail.smtp.starttls.enable: true
+  properties.mail.smtp.auth: true
+#  properties.mail.smtp.ssl.enable: true
