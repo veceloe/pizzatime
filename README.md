@@ -1,2 +1,2 @@
 # pizzatime
-metro lublino rabotaem
+Site for pizza delivery.
