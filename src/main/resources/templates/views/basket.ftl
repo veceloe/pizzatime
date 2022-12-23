@@ -11,10 +11,11 @@
     <h1>Корзина</h1>
         <#if (sum>0)>
             <form action="/basket/send" method="POST">
-                <p>Ваш телефон:</p>
-                <input type="text" name="phone" class="phone"/>
+                <p>Ваш телефон и email:</p>
+                <input type="text" name="phone" class="phone" placeholder="+7(xxx)xxx-xx-xx"/>
+                <input type="text" name="email" class="email" placeholder="Адрес электронной почты"/>
                 <#list result as product>
-                    <ul class="sasi">
+                    <ul class="order">
                         <li><img src="${product.img}" height="100" width="100"/></li>
                         <li>${product.name}</li>
                         <li>1 шт.</li>

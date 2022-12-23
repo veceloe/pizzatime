@@ -68,9 +68,9 @@ a.bn:hover {background: orange; border-color: orange;}
 .bn{color: white; font-size: 15px; padding: 1px 3px; font-family: "Jost"; border-radius: 7px; border-color: orangered; background: orangered; cursor: pointer; width: 150px; transition: all 0.15s ease; }
 .bn:hover {background: orange; border-color: orange;}
 
-.sasi {margin: 0 10px; height: 120px;}
-.sasi li {border-left: 2px black; display: inline-block; line-height: 120px; vertical-align: top; width: 19%; text-align: center;}
-.sasi li a {text-decoration: none; color: coral; cursor: pointer;}
+.order {margin: 0 10px; height: 120px;}
+.order li {border-left: 2px black; display: inline-block; line-height: 120px; vertical-align: top; width: 19%; text-align: center;}
+.order li a {text-decoration: none; color: coral; cursor: pointer;}
 
 .aia{margin: 30px 25%;}
 
