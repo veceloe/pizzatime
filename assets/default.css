@@ -82,6 +82,7 @@ input {font-family: "Jost";}
 .btton:before {content: "\f002"; font-family: FontAwesome; font-size: 16px; color: white;}
 
 .phone{border: 1px solid black; border-radius: 5px; width: 100px;}
+.email{border: 1px solid black; border-radius: 5px; width: 100px;}
 #app-main{margin: 20px 10%;}
 
 #pizza{text-align: left; margin: 10px auto; width: 1280px; color: orangered;}
