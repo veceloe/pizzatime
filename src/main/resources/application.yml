@@ -18,4 +18,8 @@ spring:
           starttls:
             enable: true
   datasource:
-    url: jdbc:postgresql://localhost:5432/pizzatime
+    url: jdbc:postgresql://postgres/pizzatime
+    username: postgres
+    password: postgres
+  thymeleaf:
+    prefix: classpath:/templates/

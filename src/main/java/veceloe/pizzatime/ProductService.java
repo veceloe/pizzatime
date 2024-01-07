@@ -20,7 +20,7 @@ public class ProductService {
     private ProductRepository productRepository;
 
     private List<Product> dataExtract() throws IOException {
-        FileInputStream file = new FileInputStream("/Users/veceloe/GitHub/pizzatime-main/assets/data.xlsx");
+        FileInputStream file = new FileInputStream("/app/assets/data.xlsx");
         Workbook workbook = new XSSFWorkbook(file);
         Sheet sheet = workbook.getSheetAt(0);
         List<Product> products = new ArrayList<>();
