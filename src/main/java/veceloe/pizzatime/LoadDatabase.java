@@ -13,7 +13,6 @@ class LoadDatabase {
 
     @Bean
     CommandLineRunner initDatabase(ProductRepository repository) {
-
         return args -> {};
     }
 }

@@ -1,6 +1,5 @@
 package veceloe.pizzatime;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.mail.javamail.JavaMailSender;
@@ -10,13 +9,15 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.mail.MessagingException;
 import javax.mail.internet.MimeMessage;
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import static veceloe.pizzatime.Basket.createAndAddCookieFromBasket;
+import static veceloe.pizzatime.Basket.getBasket;
 
 @Controller
 @RequiredArgsConstructor
@@ -49,16 +50,7 @@ public class HomeController {
         ObjectMapper mapper = new ObjectMapper();
         List<Product> bskt = new ArrayList<>();
         Basket basket = null;
-        int sum = 0;
-        for (Cookie cookie : request.getCookies()) {
-            try {
-                if ("basket".equals(cookie.getName()))
-                    basket = mapper.readValue(cookie.getValue().replace("'", "\"").replace("a", ","), Basket.class);
-            } catch (JsonProcessingException e) {
-                e.printStackTrace();
-            }
-        }
-        if (basket == null) basket = new Basket();
+        basket = getBasket(request, mapper, basket);
         for (Long p : basket.products) {
             bskt.add(productService.getById(p));
         }
@@ -97,57 +89,19 @@ public class HomeController {
         ObjectMapper mapper = new ObjectMapper();
 
         Basket basket = null;
-        for (Cookie cookie : request.getCookies()) {
-            try {
-                if ("basket".equals(cookie.getName()))
-                    basket = mapper.readValue(cookie.getValue().replace("'", "\"").replace("a", ","), Basket.class);
-            } catch (JsonProcessingException e) {
-                e.printStackTrace();
-            }
-        }
-        if (basket == null) basket = new Basket();
+        basket = getBasket(request, mapper, basket);
         basket.products.add(id);
 
-        try {
-            String value = mapper.writeValueAsString(basket).replace("\"", "'").replace(",", "a");
-            System.out.println(value);
-            Cookie cookie = new Cookie("basket", value);
-            cookie.setPath("/");
-            cookie.setMaxAge(7 * 24 * 60 * 60); // expires in 7 days
-
-            response.addCookie(cookie);
-        } catch (JsonProcessingException e) {
-            e.printStackTrace();
-        }
+        createAndAddCookieFromBasket(response, mapper, basket);
     }
 
     @GetMapping("/basket/remove/{id}")
     public String removeFromBasket(@PathVariable Long id, HttpServletRequest request, HttpServletResponse response) {
         ObjectMapper mapper = new ObjectMapper();
-
         Basket basket = null;
-        for (Cookie cookie : request.getCookies()) {
-            try {
-                if ("basket".equals(cookie.getName()))
-                    basket = mapper.readValue(cookie.getValue().replace("'", "\"").replace("a", ","), Basket.class);
-            } catch (JsonProcessingException e) {
-                e.printStackTrace();
-            }
-        }
-        if (basket == null) basket = new Basket();
+        basket = getBasket(request, mapper, basket);
         basket.products.remove(id);
-
-        try {
-            String value = mapper.writeValueAsString(basket).replace("\"", "'").replace(",", "a");
-            System.out.println(value);
-            Cookie cookie = new Cookie("basket", value);
-            cookie.setPath("/");
-            cookie.setMaxAge(7 * 24 * 60 * 60); // expires in 7 days
-            response.addCookie(cookie);
-        } catch (JsonProcessingException e) {
-            e.printStackTrace();
-        }
-
+        createAndAddCookieFromBasket(response, mapper, basket);
         return "redirect:/basket";
     }
 
@@ -156,15 +110,7 @@ public class HomeController {
         ObjectMapper mapper = new ObjectMapper();
 
         Basket basket = null;
-        for (Cookie cookie : request.getCookies()) {
-            try {
-                if ("basket".equals(cookie.getName()))
-                    basket = mapper.readValue(cookie.getValue().replace("'", "\"").replace("a", ","), Basket.class);
-            } catch (JsonProcessingException e) {
-                e.printStackTrace();
-            }
-        }
-        if (basket == null) basket = new Basket();
+        basket = getBasket(request, mapper, basket);
 
         String phoneNumberPattern = "(8|\\+7)\\d{10}";
         String emailAddressPattern = "^[a-zA-Z0-9_!#$%&’*+/=?`{|}~^.-]+@[a-zA-Z0-9.-]+$";
@@ -178,7 +124,7 @@ public class HomeController {
             order.append("e-mail: ").append(email).append('\n');
             order.append("Заказ: \n");
             for (Long id: basket.products) {
-                order.append(productService.getById(id).getName()+" - "+productService.getById(id).getCost()+"\n");
+                order.append(productService.getById(id).getName()).append(" - ").append(productService.getById(id).getCost()).append("\n");
             }
             order.append("Заказ будет скоро готов! Желаем приятного аппетита :)");
 
@@ -195,17 +141,7 @@ public class HomeController {
             javaMailSender.send(mail);
 
             basket.products.clear();
-            try {
-                String value = mapper.writeValueAsString(basket).replace("\"", "'").replace(",", "a");
-                System.out.println(value);
-                Cookie cookie = new Cookie("basket", value);
-                cookie.setPath("/");
-                cookie.setMaxAge(7 * 24 * 60 * 60); // expires in 7 days
-
-                response.addCookie(cookie);
-            } catch (JsonProcessingException e) {
-                e.printStackTrace();
-            }
+            createAndAddCookieFromBasket(response, mapper, basket);
 
             return "redirect:/order";
         } else {
