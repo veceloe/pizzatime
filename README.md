@@ -1,14 +1,13 @@
 ![Pizza](http://xn--80aawgpnx4aa.xn--p1ai/assets/1.ico#right) 
 # pizzatime! - Pizza Delivery Service
   
-Welcome to pizzatime! - a Java (Spring Boot) + Vue + Freemarker + Postgres based pizza delivery service. This service allows users to select items, add them to their cart, receive an email receipt, and complete the order process. The service supports complete navigation, product cards, cart functionality, and enables the user to provide their contact number. The orders are stored in a PostgreSQL database, allowing the operator to access customer details such as address and contact information.  
+Welcome to [pizzatime!](http://пиццатайм.рф) - a Java (Spring Boot) + Vue + Freemarker + Postgres based pizza delivery service. This service allows users to select items, add them to their cart, receive an email receipt, and complete the order process. The service supports complete navigation, product cards, cart functionality, and enables the user to provide their contact number. The orders are stored in a PostgreSQL database, allowing the operator to access customer details such as address and contact information.  
   
 ## Features  
   
 - Select and customize your favorite pizza items.  
 - Add items to your cart and review your order.  
 - Receive an order confirmation and receipt via email.  
-- Seamless navigation through the website.  
 - Accessible product cards with detailed information.  
 - Provide a contact number for order-related communication.  
 - Store order details in a PostgreSQL database.  
@@ -16,11 +15,11 @@ Welcome to pizzatime! - a Java (Spring Boot) + Vue + Freemarker + Postgres based
   
 ## Technologies Used  
   
-- Java (Spring Boot) for the backend development.  
-- Vue.js for the frontend development.  
-- Freemarker for templating.  
-- PostgreSQL for storing the order journal.  
-- Docker Compose for containerization and deployment.  
+- ☕ Java (Spring Boot) for the backend development.  
+- ▼ Vue.js for the frontend development.  
+- <> Freemarker for templating.  
+- 🐘 PostgreSQL for storing the order journal.  
+- 🐳 Docker Compose for containerization and deployment.  
   
 ## Getting Started  
   
@@ -59,6 +58,9 @@ Thank you for your interest in contributing to pizzatime! If you would like to c
 ### License
 
 The pizzatime! project is licensed under the MIT License.
+
 ### Contact
-If you have any questions or suggestions regarding pizzatime!, please feel free to contact us at pizzatime@gmail.com
+
+If you have any questions or suggestions regarding pizzatime!, please feel free to contact us at pizzatimegel@gmail.com.
+
 Happy Pizza Ordering!
