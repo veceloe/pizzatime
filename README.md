@@ -1,4 +1,5 @@
-![Pizza](http://xn--80aawgpnx4aa.xn--p1ai/assets/1.ico) # pizzatime! - Pizza Delivery Service  
+![Pizza](http://xn--80aawgpnx4aa.xn--p1ai/assets/1.ico#right) 
+# pizzatime! - Pizza Delivery Service
   
 Welcome to pizzatime! - a Java (Spring Boot) + Vue + Freemarker + Postgres based pizza delivery service. This service allows users to select items, add them to their cart, receive an email receipt, and complete the order process. The service supports complete navigation, product cards, cart functionality, and enables the user to provide their contact number. The orders are stored in a PostgreSQL database, allowing the operator to access customer details such as address and contact information.  
   
