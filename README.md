@@ -52,7 +52,8 @@ Access the pizzatime! service in your web browser at http://localhost:9090.
 - Operators can access customer information and address details by querying the PostgreSQL database.
 
 ### Contributing
-Thank you for your interest in contributing to pizzatime! If you would like to contribute, please follow these guidelines:Fork the repository and create your feature branch.
+Thank you for your interest in contributing to pizzatime! If you would like to contribute, please follow these guidelines:
+- Fork the repository and create your feature branch.
 - Commit your changes and push them to your forked repository.
 - Submit a pull request describing the changes you have made and any additional details.
 ### License
